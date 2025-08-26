@@ -25,11 +25,8 @@ SECRET_KEY = 'django-insecure-3g29lxj6==qghk#abs72k+=o7i(x+8lszii*r7ti9ly!#8*5+-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = [
-    "sandrabullock-officialchats.vercel.app",
-    "127.0.0.1",
-    "localhost"
-]
+ALLOWED_HOSTS = ["sandrabullock-officialchats.vercel.app", "127.0.0.1", "localhost"]
+
 
 
 AUTH_USER_MODEL = 'accounts.User'
