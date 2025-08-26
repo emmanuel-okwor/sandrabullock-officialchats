@@ -1,0 +1,178 @@
+
+
+{% extends "core_base.html" %}
+{% load static %}
+
+{% block title %}Signup - Sandra Sandy{% endblock title %}
+
+{% block main %}
+<div class="container-fluid bg-light">
+  <div class="row min-vh-100 align-items-center justify-content-center">
+    <!-- Signup Card -->
+    <div class="col-lg-12 col-md-8 d-flex gap-4 justify-content-center">
+      <div class="auth-form card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white">
+
+        <!-- Header -->
+        <div class="text-center mb-4">
+          <img
+            src="{% static 'images/sandra2.jpg' %}"
+            alt="Sandra Bullock"
+            class="rounded-circle shadow mb-3"
+            width="80"
+            height="80"
+          />
+          <h2 class="fw-bold mb-1" style="font-size:1.75rem;">Sandra Bullock</h2>
+          <p class="text-muted small mb-2">Create your personal account</p>
+          <p class="text-secondary small">
+            Welcome to the official Sandra Bullock family 💖<br>
+            Begin your journey and stay connected without imposters.
+          </p>
+        </div>
+
+        <!-- Signup Form -->
+        <form id="signupForm" method="post" action="{% url 'signup' %}" class="needs-validation" novalidate>
+          {% csrf_token %}
+
+          <!-- Error Messages -->
+          {% if form.errors %}
+          <div class="alert alert-danger small">
+            <ul class="mb-0 ps-3">
+              {% for field in form %}
+                {% for error in field.errors %}
+                  <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                {% endfor %}
+              {% endfor %}
+              {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          <!-- First Name -->
+          <!-- First Name -->
+          <div class="mb-3">
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+            {% if form.first_name.errors %}
+              <div class="text-danger small">{{ form.first_name.errors }}</div>
+            {% endif %}
+          </div>
+
+          <!-- Last Name -->
+          <div class="mb-3">
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+            {% if form.last_name.errors %}
+              <div class="text-danger small">{{ form.last_name.errors }}</div>
+            {% endif %}
+          </div>
+
+          <!-- Username -->
+          <div class="mb-3">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+            {% if form.username.errors %}
+              <div class="text-danger small">{{ form.username.errors }}</div>
+            {% endif %}
+          </div>
+
+          
+          <!-- Email -->
+          <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {% if form.email.errors %}
+              <div class="text-danger small">{{ form.email.errors }}</div>
+            {% endif %}
+          </div>
+
+         <!-- Password 1 -->
+          <div class="mb-3">
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+            {% if form.password1.errors %}
+              <div class="text-danger small">{{ form.password1.errors }}</div>
+            {% endif %}
+          </div>
+
+          <!-- Terms & Conditions -->
+          <div class="form-check mb-4">
+          </div>
+
+          <!-- Password 2 -->
+          <div class="mb-3">
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+            {% if form.password2.errors %}
+              <div class="text-danger small">{{ form.password2.errors }}</div>
+            {% endif %}
+          </div>
+
+          <!-- Terms & Conditions -->
+          <div class="form-check mb-3">
+            {{ form.terms }}
+            {{ form.terms.label_tag }}
+            {% if form.terms.errors %}
+              <div class="text-danger small">{{ form.terms.errors }}</div>
+            {% endif %}
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary w-100 py-2 fs-6 rounded-3" id="signupBtn">
+            <span class="btn-text">✨ Create My Account ✨</span>
+            <span class="spinner-border spinner-border-sm d-none ms-2" role="status"></span>
+          </button>
+
+          <hr class="my-4">
+
+          <!-- Already Have Account -->
+          <div class="text-center">
+            <p class="mb-0">
+              Already part of the family?
+              <a href="{% url 'login' %}" class="fw-semibold text-decoration-none">Sign in</a>
+            </p>
+          </div>
+        </form>
+        
+      </div>
+        <!-- Right Side - Image/Brand -->
+      <div
+            class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center text-white p-5"
+            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        >
+            <div class="text-center">
+            <h1 class="fw-bold mb-3">Sandra Sandy 💫</h1>
+            <p class="lead">
+                Your official fan connection platform. Real conversations. Real
+                Sandra. No impostors.
+            </p>
+            <img
+                src="{% static 'images/sandra3.jpg' %}"
+                alt="Fans"
+                class="img-fluid mt-4"
+                style="max-height: 250px"
+            />
+            </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Toast for Notifications -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="authToast" class="toast align-items-center border-0 shadow" role="alert">
+    <div class="d-flex">
+      <div class="toast-body" id="toastMessage">
+        <!-- JS inserts message here -->
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+{% endblock main %}
+
+{% block script %}
+<script src="{% static 'js/auth.js' %}"></script>
+{% endblock script %}

@@ -1,0 +1,132 @@
+
+<!-- templates/settings.html -->
+{% load static %}
+
+{% block content %}
+<style>
+  /* Background image for the whole page */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url("{% static 'images/background.jpg' %}") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  /* Dark overlay for readability */
+  .overlay {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 60px 20px;
+    border-radius: 20px;
+  }
+
+  .settings-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .card {
+    transition: all 0.3s ease-in-out;
+    border: none;
+    border-radius: 20px;
+    background: #fff;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .settings-title {
+      font-size: 1.7rem;
+    }
+    .card-title {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<div class="container py-5">
+  <div class="overlay">
+    <h2 class="mb-5 text-center settings-title">⚙️ Account Settings</h2>
+
+    <div class="row g-4">
+      <!-- Profile Settings -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">
+            </h4>
+            <p>Update your personal details, profile photo, and fan preferences.</p>
+            <a href="{% url 'edit_profile' %}" class="btn btn-primary btn-sm rounded-pill px-3">Edit Profile</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">
+            </h4>
+            <p>Change your password and manage login security to keep your account safe.</p>
+            <a href="{% url 'reset_password' %}" class="btn btn-warning btn-sm rounded-pill px-3">Reset Password</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">
+            </h4>
+            <p>Enable or disable email and site notifications so you don’t miss updates.</p>
+            <a href="#" class="btn btn-info btn-sm rounded-pill px-3">Manage Notifications</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fan Card -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">
+            </h4>
+            <p>Upload and manage your official Sandra Bullock Fan Card.</p>
+            <a href="{% url 'edit_backup' %}" class="btn btn-success btn-sm rounded-pill px-3">Add Fan Card</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Fan Card -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">
+            </h4>
+            <a href="{% url 'dashboard' %}" class="btn btn-success btn-sm rounded-pill px-3">back to profile</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+   
+  </div>
+</div>
+{% endblock %}

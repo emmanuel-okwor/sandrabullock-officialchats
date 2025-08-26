@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Backup Picture</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section
+      class="py-5"
+      style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+      >
+      <div class="container">
+        <div class="card shadow-sm p-4" style="max-width: 500px; margin: auto">
+          <h2 class="text-center mb-4">Buy Your Card Any of this app</h2>
+          
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a
+              href="{% url 'dashboard' %}"
+              class="btn btn-warning text-white py-2 px-4 rounded-pill shadow-sm"
+              >Buy from Zangi</a
+            >
+            <a
+              href="#"
+              class="btn btn-warning text-white py-2 px-4 rounded-pill shadow-sm"
+              >Buy from whatsapp</a
+            >
+            <a
+              href="#"
+              class="btn btn-warning text-white py-2 px-4 rounded-pill shadow-sm"
+              >Buy from emial</a
+            >
+          </div>
+        </div>
+        <a
+          href="{% url 'dashboard' %}"
+          class="btn btn-primary text-white py-2 px-4 m-3 rounded-pill shadow-sm"
+          >back to dashboad</a
+        >
+      </div>
+    </section>
+  </body>
+</html>

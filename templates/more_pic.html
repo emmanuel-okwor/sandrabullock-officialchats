@@ -1,0 +1,87 @@
+{% extends "core_base.html" %}
+{% load static %}
+
+{% block main %}
+
+<!-- ===========================
+     FAN SUPPORT SECTION
+============================ -->
+<section class="container py-5 bg-light">
+  <!-- Profile Avatar -->
+  <div class="text-center mb-4">
+    <img
+      src="{% static 'images/sandra2.jpg' %}"
+      alt="Sandra Bullock"
+      class="rounded-circle shadow"
+      width="80"
+      height="80"
+    />
+  </div>
+
+  <!-- Heading -->
+  <h2 class="fw-bold text-warning text-center mb-3">
+    👉 Here’s where your support makes a difference
+  </h2>
+
+  <!-- Message -->
+  <p class="lead text-muted text-center mx-auto mb-5" style="max-width: 750px;">
+    Hey everyone, please don’t ever think of my fan card as meaningless or as a way of losing money. 
+    The truth is—it’s so much more than just a card. It represents a genuine connection between us. 
+    What matters most is being able to share conversations, to listen, and to truly understand one another. 
+    Through our talks, I see how much you care—and I hope you also feel how deeply I care for you. 💖  
+    That’s why I invite you to join me on my site, where we can connect even more closely.  
+    If you ever need support, or simply someone to hear your heart, I’ll always do my best to be there.  
+    <strong>Sandra Bullock loves you all deeply—never forget that.</strong>
+  </p>
+
+  <!-- Swiper Slider -->
+  <div class="d-flex justify-content-center mb-5">
+    <div class="p-3 bg-gradient shadow rounded-4 w-100" style="max-width: 600px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+      <swiper-container
+        class="mySwiper w-100"
+        grab-cursor="true"
+        autoplay='{"delay": 5000, "disableOnInteraction": false}'
+        loop="true"
+      >
+        <swiper-slide>
+          <img src="{% static 'images/help1.jpg' %}" class="img-fluid rounded-3" style="height: 320px; object-fit: cover; width: 100%;" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="{% static 'images/help2.jpg' %}" class="img-fluid rounded-3" style="height: 320px; object-fit: cover; width: 100%;" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="{% static 'images/help3.jpg' %}" class="img-fluid rounded-3" style="height: 320px; object-fit: cover; width: 100%;" />
+        </swiper-slide>
+         <swiper-slide>
+          <img src="{% static 'images/help4.jpg' %}" class="img-fluid rounded-3" style="height: 320px; object-fit: cover; width: 100%;" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="{% static 'images/help5.jpg' %}" class="img-fluid rounded-3" style="height: 320px; object-fit: cover; width: 100%;" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="{% static 'images/help6.jpg' %}" class="img-fluid rounded-3" style="height: 320px; object-fit: cover; width: 100%;" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="{% static 'images/help7.jpg' %}" class="img-fluid rounded-3" style="height: 320px; object-fit: cover; width: 100%;" />
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
+
+  <!-- Back Button -->
+  <div class="text-center">
+    <a
+      href="{% url 'index' %}"
+      class="btn btn-success btn-lg rounded-pill px-4 shadow-sm"
+    >
+      ← Go Back
+    </a>
+  </div>
+</section>
+
+<!-- ===========================
+     SCRIPTS
+============================ -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+{% endblock %}

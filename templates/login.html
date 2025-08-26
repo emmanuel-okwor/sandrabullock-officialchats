@@ -1,0 +1,104 @@
+{% extends "core_base.html" %}
+{% load static %}
+{% block title %}Login - Sandra Sandy{% endblock title %}
+
+
+{% block main %}
+    <div class="container-fluid bg-light">
+        <div class="row min-vh-100">
+            <!-- Left Side - Form -->
+           <div class="col-lg-6 d-flex align-items-center justify-content-center">
+            <div class="auth-form card shadow-lg p-5 rounded-4 w-100" style="max-width: 450px;">
+                  <!-- Header -->
+                <div class="text-center mb-4">
+                    <img
+                        src="{% static 'images/sandra2.jpg' %}"
+                        alt="Sandra Bullock"
+                        class="rounded-circle shadow mb-3"
+                        width="80"
+                        height="80"
+                    />
+                    <h3 class="fw-bold mb-2">Welcome Back 👋</h3>
+                    <p class="text-muted small">
+                        Sign in to connect directly with <strong>Sandra Sandy</strong>.  
+                        New here? Create your fan account below!
+                    </p>
+                </div>
+                        {% if form.errors %}
+                            <div class="alert alert-danger">
+                                <ul>
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                    <li>{{ field.label }}: {{ error }}</li>
+                                    {% endfor %}
+                                {% endfor %}
+                                {% for error in form.non_field_errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                    <form id="loginForm" method='post' action="{% url 'login' %}" class="needs-validation">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            {{ form.username.label_tag }}
+                            {{ form.username }}
+                            {{ form.username.errors }}
+                          
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.password.label_tag }}
+                            {{ form.password }}
+                            {{ form.password.errors }}
+                            <div class="form-text">
+                                {{ form.password.help_text }}
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mb-3" id="loginBtn">
+                            <span class="btn-text">Sign In</span>
+                            <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+                        </button>
+
+                        <div class="text-center">
+                            
+                            <a href="{% url 'reset_password' %}" class="text-decoration-none">Forgot your password?</a>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="text-center">
+                            <p class="mb-0">Don't have an account? 
+                                <a href="{% url 'signup' %}" class="text-decoration-none fw-bold">Sign up</a>
+                            </p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+                <!-- Right Side - Image/Brand -->
+        <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center bg-primary text-white p-5">
+            <div class="text-center">
+                <h1 class="fw-bold mb-3">Sandra Sandy 💫</h1>
+                <p class="lead">Your official fan connection platform.  
+                Real conversations. Real Sandra. No impostors.</p>
+                <img src="{% static 'images/sandra3.jpg' %}" alt="Fans" class="img-fluid mt-4" style="max-height: 250px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main %}
+
+{% block script %}
+    <script src="static/js/auth.js"></script>
+{% endblock script %}
+
+
+
+
+

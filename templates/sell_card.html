@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}Sandra Bullock Fan Card{% endblock title %}</title>
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      border-radius: 20px;
+      border: none;
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    }
+    h4 {
+      font-weight: 700;
+      color: #333;
+    }
+    p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .btn {
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border-radius: 15px;
+    }
+    .btn i {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+    .back-btn {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card shadow p-4" style="max-width: 650px; margin: auto;">
+      
+      <h4 class="text-center mb-3">💳 Get Your Official Fan Card First? to be a member <strong class="text-success"> Sandra Bullock </strong></h4>
+      
+      <p class="text-center mb-4">
+        Join my beautiful journey with the <strong>Sandra Bullock Fan Card</strong>.  
+        💫 Every true member of my circle has one — it keeps us genuine, connected,  
+        and safe from impostors. Thank you for choosing to be with me,  
+        it truly means the world. 🥰😘❤️🤍🩶🫶🩵🤎
+      </p>
+
+      <div class="row g-3 text-center justify-content-center">
+        <!-- WhatsApp -->
+        <div class="col-6 col-md-4">
+          <a href="https://wa.me/19382516774" target="_blank" 
+             class="btn btn-outline-success w-100 py-3 shadow-sm">
+            <i class="fab fa-whatsapp fa-2x"></i> WhatsApp
+          </a>
+        </div>
+        <!-- Zangi -->
+        <div class="col-6 col-md-4">
+          <a href="https://services.zangi.com/dl/conversation/4810487012" target="_blank" 
+             class="btn btn-outline-info w-100 py-3 shadow-sm">
+            <i class="fas fa-comment-dots fa-2x"></i> Zangi
+          </a>
+        </div>
+        <!-- Email -->
+        <div class="col-6 col-md-4">
+          <a href="mailto:sandysandraab@gmail.com" 
+             class="btn btn-outline-dark w-100 py-3 shadow-sm">
+            <i class="fas fa-envelope fa-2x"></i> Email
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to profile -->
+      <div class="text-center back-btn">
+        <a href="{% url 'dashboard' %}" 
+           class="btn btn-primary text-white py-2 px-4 rounded-pill shadow-sm">
+          ← Back to Profile
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
