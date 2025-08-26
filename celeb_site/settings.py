@@ -18,10 +18,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3g29lxj6==qghk#abs72k+=o7i(x+8lszii*r7ti9ly!#8*5+-'
 DEBUG = True  # Set to False in production
 ALLOWED_HOSTS = [
-    "sandrabullock-privateofficial.vercel.app",
+    "sandrabullock-privatechat.vercel.app",
     "127.0.0.1",
     "localhost"
 ]
+
 
 
 # -------------------------------
