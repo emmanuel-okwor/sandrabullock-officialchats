@@ -16,20 +16,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security
 # -------------------------------
 SECRET_KEY = 'django-insecure-3g29lxj6==qghk#abs72k+=o7i(x+8lszii*r7ti9ly!#8*5+-'
-<<<<<<< HEAD
 DEBUG = True  # Set to False in production
 ALLOWED_HOSTS = [
     "sandrabullock-officialchats.vercel.app",
     "127.0.0.1",
     "localhost"
 ]
-=======
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ["sandrabullock-officialchats.vercel.app", "127.0.0.1", "localhost"]
-
->>>>>>> origin/main
 
 # -------------------------------
 # Custom User Model
@@ -157,10 +149,3 @@ CHANNEL_LAYERS = {
         "BACKEND": "channels.layers.InMemoryChannelLayer"
     },
 }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
